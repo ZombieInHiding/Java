@@ -10,16 +10,18 @@
 <title>Change Password</title>
 </head>
 <body>
+<jsp:include page="banner.jsp" />
 <div class="wrapper">
 <div class="container">
 	<form action="user.quiz" class="form-signin">
 	<h1 class="form-signin-heading">Change Password</h1>
-	<table class="table table-striped" style="width:50%">
-	    <tr><td>Email id:</td><td> <input type="email" name="email" required></td></tr> 
+	<table class="table table-striped"> 
 		<tr><td>New Password: </td><td><input type="password" name="password" required></td></tr>	
 		<tr><td colspan = "2"><input type="submit" value="Submit" class="btn btn-success"></td></tr>
-		</table>		
+	</table>		
 	</form>
-	</div></div>
+</div>
+<%@ include file="footer.html" %>
+</div>
 </body>
 </html>

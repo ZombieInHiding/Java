@@ -10,6 +10,7 @@
 <title>Register</title>
 </head>
 <body>
+<jsp:include page="banner.jsp" />
 <div class="wrapper">
 <div class="container">
 	<form action="user.quiz" class="form-signin">
@@ -22,6 +23,8 @@
 		</table>		
 		<hr>Already Registered? <a href = "index.jsp">Go to Login</a>
 	</form>
-	</div></div>
+	</div>
+	<%@ include file="footer.html" %>
+	</div>
 </body>
 </html>

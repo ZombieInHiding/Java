@@ -3,6 +3,11 @@ package lti.quiz.bean;
 public class OptionBean {
 	private String option, score;
 
+	public OptionBean(String option, String score) {
+		this.option = option;
+		this.score = score;
+	}
+
 	public String getOption() {
 		return option;
 	}

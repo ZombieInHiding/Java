@@ -2,7 +2,7 @@
 @import "bourbon";
 
 body {
-	background: #eee !important;	
+	background-color: teal;
 }
 
 .wrapper {	

@@ -4,7 +4,11 @@ public class RegisterBean {
 	private String email, password, answer, profile;
 
 	public RegisterBean() {
-	profile="img/mario.jpg";
+	profile="img/mario.png";
+	}
+	
+	public RegisterBean(String profile) {
+		this.profile = profile;
 	}
 
 	public String getEmail() {

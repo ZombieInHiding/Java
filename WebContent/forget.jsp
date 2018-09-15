@@ -10,6 +10,7 @@
 <title>Forgot Password</title>
 </head>
 <body>
+<jsp:include page="banner.jsp" />
 <div class="wrapper">
 <div class="container">
 	
@@ -24,6 +25,8 @@
 		<tr><td colspan="2"><input type="submit" value="Submit" class="btn btn-success"></td></tr>
 	</table>		
 	</form>
-	</div></div>
+	</div>
+	<%@ include file="footer.html" %>
+	</div>
 </body>
 </html>
