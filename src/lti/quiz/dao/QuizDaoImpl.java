@@ -7,16 +7,34 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import lti.quiz.bean.OptionBean;
 import lti.quiz.bean.QuizBean;
 import oracle.jdbc.OracleDriver;
 
 public class QuizDaoImpl implements QuizDao {
 	private Connection getConnection() throws SQLException {
-		DriverManager.registerDriver(new OracleDriver());
+		
+		//Specific to a database
+		/*DriverManager.registerDriver(new OracleDriver());
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		Connection conn = DriverManager.getConnection(url, "quiz", "servlet");
-		return conn;
+		return conn;*/
+		
+		// Server level
+				try {
+					Context initContext = new InitialContext();
+					Context envContext  = (Context)initContext.lookup("java:/comp/env");
+					DataSource ds = (DataSource)envContext.lookup("jdbc/quiz");
+					Connection conn = ds.getConnection();
+					return conn;
+				} catch (NamingException e) {
+					throw new SQLException(e.getMessage());
+				}
 	}
 
 	@Override
